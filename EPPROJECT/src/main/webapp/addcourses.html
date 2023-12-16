@@ -1,0 +1,108 @@
+<jsp:include page="Home.html"/>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add courses</title>
+</head>
+<body>
+<a href="adminhome.jsp">Back</a>
+<h3>Add-Course</h3>
+<style>
+/* Reset some default styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Center the form on the page */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 400px;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Style the label for the file input */
+label[for="src"] {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Add some spacing between elements */
+form > * {
+  margin-bottom: 15px;
+}
+
+
+</style>
+<form method="post" action="cinsert.jsp">
+    <label for="id"> enter id
+        <input type="number" name="id">       
+    </label><br>
+    <label for="name"> enter name
+        <input type="text" name="name">       
+    </label><br>
+    <label for="src"> image url
+        <input type="text" name="src">       
+    </label><br>
+    
+    <label for="about"> enter description
+        <textarea rows="2" cols="8" name="about"></textarea>       
+    </label><br>
+    <label for="route"> enter route
+        <input type="text" name="route">       
+    </label><br>
+    <input type="submit" value="Add-Course" required>
+</form>
+
+</body>
+</html>

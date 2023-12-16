@@ -1,0 +1,105 @@
+body {
+    overflow-x: hidden;
+    margin: 0;
+  }
+  
+  .total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(251, 220, 180);
+    height: 8%;
+    width: 100%;
+  }
+  
+  .logo img {
+    
+    height: 70%;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .search input {
+    height: 50%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.753);
+    border-radius: 12px;
+    border: 2px solid rgb(255, 255, 255);
+  }
+  
+  .container {
+    display: flex;
+  }
+  
+  .inside {
+    font-size: medium;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+    margin-right: 15px;
+    color: black;
+    transition: 0.5s;
+  }
+  
+  .container .inside:hover {
+    color: orangered;
+    transform: scale(1.06);
+  }
+  
+  .container .inside::after {
+    display: block;
+    content: ' ';
+    height: 2px;
+    transition: width 0.3s ease 0s;
+    width: 0px;
+    transition: 0.5s;
+  }
+  
+  .container .inside:hover::after {
+    width: 100%;
+    left: 0;
+    background-color: rgba(255, 27, 27, 0.954);
+  }
+  
+  .menu {
+    display: none;
+  }
+  
+  @media only screen and (max-width: 900px) {
+    .menu {
+      display: block;
+      position: absolute;
+      right: 10%;
+      box-sizing: border-box;
+      cursor: pointer;
+      z-index: 1;
+    }
+  
+    .container {
+      width: 50%;
+      height: 100%;
+      background: rgba(253, 226, 191, 0.297);
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4rem;
+      /* to get the transition */
+      transform: translateX(155%);
+      transition: all 0.2s linear;
+      flex-direction: column;
+      opacity: 0;
+    }
+ 
+    .active {
+      transform: translateX(100%);
+      opacity: 1;
+      right: 0;
+      visibility: visible;
+    }
+  }
+  

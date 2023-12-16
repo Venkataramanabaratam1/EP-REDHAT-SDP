@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+
+<title>JSF Application</title>
+
+</h:head>
+
+<h:body>
+
+<h2 align="center">JSF CRUD Operations with JPA</h2><hr color="black"/><hr color="black"/>
+
+<a href="index.jsf">Home</a>&nbsp;&nbsp;&nbsp;
+<a href="empreg.jsf">Employee Registration</a>&nbsp;&nbsp;&nbsp;
+<a href="updateemp.jsf">Update Employee</a>&nbsp;&nbsp;&nbsp;
+<a href="viewallemps.jsf">View All Employees</a>&nbsp;&nbsp;&nbsp;
+<a href="emplogin.jsf">Employee Login</a>&nbsp;&nbsp;&nbsp;
+
+<br/><br/>
+
+<h3 align="center">Update Employee</h3>
+
+<center>
+
+<h:form>
+
+<h:panelGrid columns="3">
+<h:outputLabel value="Enter ID" />
+<h:inputText value="#{studbean.id}" id="eid" validatorMessage="ID is Compulsory">
+<f:validateRequired/>
+</h:inputText>
+<h:message for="eid"  style="color:red" />
+</h:panelGrid>
+
+<br/>
+
+<h:panelGrid columns="3">
+<h:outputLabel value="Enter Year" />
+<h:inputText value="#{studbean.year}" id="eyear" validatorMessage="Enter your year">
+<f:validateDoubleRange minimum="10000.0" maximum="50000.0"></f:validateDoubleRange>
+</h:inputText>
+<h:message for="eyear"/>
+</h:panelGrid>
+
+<br/>
+
+<h:panelGrid columns="3">
+<h:outputLabel value="Enter Password" />
+<h:inputSecret value="#{studbean.password}" id="epwd" validatorMessage="Password is Compulsory and It must follow pattern">
+<f:validateRegex pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})"></f:validateRegex>
+</h:inputSecret>
+<h:message for="epwd"/>
+</h:panelGrid>
+
+<br/>
+
+<h:panelGrid columns="3">
+<h:outputLabel value="Enter Contact Number" />
+<h:inputText value="#{studbean.contactno}" id="econtact" validatorMessage="Contact Number must contains 10 digits">
+<f:validateRegex pattern="^\d{10}$"></f:validateRegex>
+</h:inputText>
+<h:message for="econtact"/>
+</h:panelGrid>
+
+<br/>
+
+<h:commandButton action="#{studbean.updateemp()}" value="Update Employee" />
+
+</h:form>
+
+</center>
+
+</h:body>
+
+</html>
